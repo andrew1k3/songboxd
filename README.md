@@ -8,7 +8,7 @@ SongBoxd is a platform I developed as a project during my final year of high sch
 
 ## Preview
 
-You can preview the website [here](https://your-website-url.com). (SOON IT ILL WORK)
+You can preview the website [here](https://your-website-url.com). (SOON IT WILL WORK)
 
 [//]: # (Include screenshots or gifs here if applicable)
 
