@@ -40,11 +40,6 @@
     }
 })();
 
-function add_rating(id, val) {
-    console.log(id,val);
-    document.cookie = `${id}=${val}`;
-}
-
 function ms_to_time(num) {
     var seconds = num / 1000;
     var mins = Math.floor(seconds / 60);
@@ -53,6 +48,7 @@ function ms_to_time(num) {
         var temp = overflow_seconds;
         var overflow_seconds = `0${temp}`
     }
+    console.log(`${mins}:${overflow_seconds}`);
     return `${mins}:${overflow_seconds}`;
 }
 
@@ -61,13 +57,7 @@ const generatePage = async (album) => {
     `
         <a href="indexTest.html">BACK</a>
         <h4>${album.album_type}</h4>
-        <img src='${album.images[0].url}' alt='${album.id}' style="display:block;" />
-        <input id="stars"
-                   data-role="rating"
-                   data-stars="10"
-                   data-values="1,2,3,4,5,6,7,8,9,10"
-                   data-stared-color="#2CD34B"
-                   data-on-star-click="$('#stars').data('rating').msg(arguments[0]); add_rating('${album.id}',arguments[0]);">
+        <img src='${album.images[0].url}' alt='${album.id}' />
         <div class='center-div'> 
             <h1 style="display: inline">${album.name}</h1>
             <a href="${album.external_urls.spotify}" target="_blank" rel="noopener noreferrer"><img src='Spotify_logo_without_text.png' style='width:20px;height:20px;'/></a>

@@ -57,5 +57,3 @@ C:\Users\0407744\source\repos\Songbox Prototype\Songbox Prototype\obj\Debug\Song
 C:\Users\0407744\source\repos\Songbox Prototype\Songbox Prototype\obj\Debug\Songbox Prototype.csproj.CopyComplete
 C:\Users\0407744\source\repos\Songbox Prototype\Songbox Prototype\obj\Debug\Songbox Prototype.dll
 C:\Users\0407744\source\repos\Songbox Prototype\Songbox Prototype\obj\Debug\Songbox Prototype.pdb
-F:\Downloads\New folder (4)\Songbox Prototype\obj\Debug\Songbox Prototype.dll
-F:\Downloads\New folder (4)\Songbox Prototype\obj\Debug\Songbox Prototype.pdb

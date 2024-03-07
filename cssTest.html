@@ -5,16 +5,17 @@
     <title></title>
     <link rel="stylesheet" href="https://cdn.korzh.com/metroui/v4/css/metro-all.min.css">
     <style>
-        body {
-            background-color: rgb(29, 29, 29);
-        }
         section {
+            width: auto;
+            height: auto;
+            border: 1px solid red;
             display: grid;
             justify-content: center;
         }
         .phone {
             min-width: 450px;
             min-height: 800px;
+            color: #fff;
             background: #4C4B4B;
             padding: 30px;
             display: inline-block;
@@ -29,6 +30,7 @@
             left: 0;
             bottom: 0;
             width: 100%;
+            border: 1px solid red;
             color: white;
             text-align: center;
         }
@@ -37,39 +39,22 @@
 <body>
     <section>
         <div class="phone">
-            <input id="stars"
+            <input id="thai"
                    data-role="rating"
                    data-stars="10"
                    data-values="1,2,3,4,5,6,7,8,9,10"
-                   data-stared-color="rgb(44, 256, 75)"
-                   data-on-star-click="$('#stars').data('rating').msg(arguments[0]); main(arguments[0]);">
-            <input id="text" style="display:block;">
-            <div id="center-div">
-            </div>
+                   data-star-color="#C5DEB3"
+                   data-stared-color="#2CD34B"
+                   data-on-star-click="$('#thai').data('rating').msg(arguments[0])">
             <div class="footer">
                 <button class="button" onclick="window.location='cssTest.Html'">Home</button>
                 <button class="button" onclick="window.location='indexTest.Html';" >Search</button>
-                <button class="button" onclick="window.location='profile.Html';">Profile</button>
+                <button class="button">Profile</button>
             </div>
         </div>
     </section>
-<script src="https://cdn.korzh.com/metroui/v4/js/metro.min.js"></script>
-<script>
-    function main(val) {
-        document.getElementById('center-div').innerHTML = '';
-        let id = document.getElementById('text').value;
-        console.log(id, val);
-        document.cookie = `${id}=${val}`;
+<script src="https://cdn.korzh.com/metroui/v4/js/metro.min.js">
 
-        let cookies = document.cookie.split(';');
-        cookies.forEach(cookie => {
-            let html = 
-            `
-            <h1>${cookie}</h1>
-            `;
-            document.getElementById('center-div').insertAdjacentHTML('beforeend', html);
-        });     
-    }  
 </script>
 </body>
 </html>

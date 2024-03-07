@@ -101,7 +101,7 @@
     }
 })();
 
-
+/*
 function multiArtist(item) {
     var out = item[0].name;
     if (item.length == 1) { return out; }
@@ -110,7 +110,7 @@ function multiArtist(item) {
     }
     return out;  
 };
-
+*/
 
 const page = async (id) => {
     // launch album page with info

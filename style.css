@@ -13,17 +13,21 @@ h5 {
     font-size: medium;
 }
 
+button {
+    min-width: 100px;
+    min-height: 50px;
+}
 
 html,
 body {
     height: 100%;
     font-size: medium;
-    background-color: rgb(29, 29, 29);
 }
 
 section {
     width: auto;
     height: auto;
+    border: 1px solid red;
     display: grid;
     justify-content: center;
 }
@@ -46,31 +50,15 @@ section {
     border-radius: 25px;
 }
 
-.widget {
-    padding: 50px;
-}
-
 a {
-    color: #2CD34B !important;
+    color: #2CD34B;
 }
 
 a:hover {
-    color: #08fc35 !important;
+    color: #08fc35;
     text-decoration: underline;
 }
 
 tr {
-    padding: 10px !important;
-}
-
-td {
-    text-align: center;
-  }
-
-.footer {
-    position: absolute !important;
-    left: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    text-align: center !important;
+    padding: 10px;
 }
