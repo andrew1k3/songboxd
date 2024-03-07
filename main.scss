@@ -1,0 +1,142 @@
+
+
+.btn.dropdown-toggle  {
+    width:150px;
+    text-align:left;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+span.caret {
+    position: absolute;
+    left: 90%;
+    top: 45%;
+}
+
+label {
+    padding-top:5px;
+}
+
+.form-label {
+    padding-left:0px !important;
+}
+
+img {
+    width:100px;
+    height:100px;
+}
+
+.btn-success {
+    background-color: #3b7d4a!important;
+}
+
+.btn-success:hover {
+    background-color: #4daf64!important;
+}
+
+img.track {
+    border: 1px solid #8a8a8a;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+$rating-emoji: "??" !default;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 32px;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  background-color: #e6e6e6;
+}
+
+.visuhide {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+%star-active {
+  filter: grayscale(0);
+}
+%star-inactive {
+  filter: grayscale(1);
+}
+
+.star {
+  $p: &;
+  $star_count: 5;
+
+  @for $i from 1 through $star_count {
+    &__container:not(:hover)
+      > &__radio:nth-of-type(#{$i}):checked
+      ~ &__item:nth-of-type(#{$i})
+      ~ &__item {
+      @extend %star-inactive;
+    }
+
+    &__radio:nth-of-type(#{$i}):checked ~ &__item:nth-of-type(#{$i})::before {
+      transform: scale(1.5);
+      transition-timing-function: cubic-bezier(0.5, 1.5, 0.25, 1);
+    }
+  }
+
+  &__container {
+    display: flex;
+    margin: auto;
+    border-radius: 0.25em;
+    background-color: #00a39b;
+    box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease;
+
+    &:focus-within {
+      box-shadow: 0 0.125em 0.5em rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &__item {
+    display: inline-flex;
+    width: 1.25em;
+    height: 1.5em;
+    @extend %star-inactive;
+
+    &::before {
+      content: $rating-emoji;
+      display: inline-block;
+      margin: auto;
+      font-size: 0.75em;
+      vertical-align: top;
+      backface-visibility: hidden;
+      transform-origin: 50% 33.3%;
+      transition: transform 0.3s ease-out;
+    }
+
+    #{$p}__container:hover &,
+    #{$p}__radio:checked ~ & {
+      @extend %star-active;
+    }
+
+    &:hover ~ & {
+      @extend %star-inactive;
+    }
+  }
+}

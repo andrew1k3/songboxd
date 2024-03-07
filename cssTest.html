@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.korzh.com/metroui/v4/css/metro-all.min.css">
+    <style>
+        body {
+            background-color: rgb(29, 29, 29);
+        }
+        section {
+            display: grid;
+            justify-content: center;
+        }
+        .phone {
+            min-width: 450px;
+            min-height: 800px;
+            background: #4C4B4B;
+            padding: 30px;
+            display: inline-block;
+            border-radius: 25px;
+            border: 2px solid #A3A7A2;
+        }
+        .rating {
+            max-height: 200px;
+        }
+        .footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="phone">
+            <input id="stars"
+                   data-role="rating"
+                   data-stars="10"
+                   data-values="1,2,3,4,5,6,7,8,9,10"
+                   data-stared-color="rgb(44, 256, 75)"
+                   data-on-star-click="$('#stars').data('rating').msg(arguments[0]); main(arguments[0]);">
+            <input id="text" style="display:block;">
+            <div id="center-div">
+            </div>
+            <div class="footer">
+                <button class="button" onclick="window.location='cssTest.Html'">Home</button>
+                <button class="button" onclick="window.location='indexTest.Html';" >Search</button>
+                <button class="button" onclick="window.location='profile.Html';">Profile</button>
+            </div>
+        </div>
+    </section>
+<script src="https://cdn.korzh.com/metroui/v4/js/metro.min.js"></script>
+<script>
+    function main(val) {
+        document.getElementById('center-div').innerHTML = '';
+        let id = document.getElementById('text').value;
+        console.log(id, val);
+        document.cookie = `${id}=${val}`;
+
+        let cookies = document.cookie.split(';');
+        cookies.forEach(cookie => {
+            let html = 
+            `
+            <h1>${cookie}</h1>
+            `;
+            document.getElementById('center-div').insertAdjacentHTML('beforeend', html);
+        });     
+    }  
+</script>
+</body>
+</html>
